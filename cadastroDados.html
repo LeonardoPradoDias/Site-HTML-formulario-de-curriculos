@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="with=devide-width, initial-scale=1.0" charset = "UTF-8">
+		<title>Projeto 2 - Multimídia e Hipermídia</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<section class="sub-header">
+		 <nav>
+			<a href="index.html"><img src="imagens/logo.png"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="sobre.html">SOBRE</a></li>
+				</ul>
+			</div>
+		 </nav>
+
+	</section>
+
+<!------------------------------ CADASTRAR--------------------------->
+
+<section class="cadastrar">
+	<h1>Faça seu cadastro</h1>
+	<p>Preencha o formulário abaixo para se candidatar em uma vaga da nossa empresa!</p>
+		
+		<div class="formulario-dados">
+			<h2>Preencha seus dados pessoais. Os campos com '*' são obrigatórios</h2>
+			
+			<form class="textbox-formulario" action="cadastroObjetivos.html">           <!-- action faz ir para a prox pagina ao clicar no bota0-->
+				<h3>Nome completo*</h3>
+				<input type="text" id="nomeCompleto" 
+					placeholder="Máximo de 50 caracteres"  maxlength="50" required >	<!-- maxlength e required verificam tamanho e se é obrigatorio -->
+					
+				<h3>Data de nascimento*</h3>
+				<input type="date" id="nascimento" 										
+					placeholder="dd/mm/aaaa" title="Digite uma data válida" required >								<!-- Tipo date não permite datas invalidas -->
+				
+				<h3>Gênero*</h3>
+				<input type="text" id="genero" 
+					placeholder="Ex: Masculino, Feminino ou Outro" maxlength="20" required >
+				
+				<h3>Estado civil*</h3>
+				<input type="text" id="estadoCivil" 
+					placeholder="Ex: casado(a), solteiro(a)" maxlength="20" required >
+				
+				<h3>País de nacionalidade*</h3>
+				<input type="text" id="nacionalidade" 
+					placeholder="Ex: Brasil" maxlength="20" required >
+				
+				<h3>CPF*</h3>
+				<input type="text" id="cpf" 
+					placeholder="XXXX.XXX.XXX-XX" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" title="Digite um formato válido de CPF" required > <!-- usuario pode ou nao digitar ponto e traço -->
+				
+				<h3>Endereço*</h3>
+				<input type="text" id="endereco" 
+					placeholder="Ex: Rua José Silva, Número 456, Jardim Lutfalla, Apt. 25" maxlength="100" required >
+				
+				<h3>E-mail*</h3>
+				<input type="email" id="email"
+					placeholder="xxxxx@gmail.com" title="Digite um e-mail válido" required > 											<!-- tipo email já verifica se é válido -->
+				
+				<h3>Celular*</h3>
+				<input type="text" id="celular" 
+					placeholder="Inclua o DDD. Parenteses e traço são opcionais. Ex: (16) 99876-5432"
+					pattern="\(?[1-9]\d\)?\s?9?\d{4}-?\d{4}" title="Digite um número de celular/telefone válido" required >
+					<!-- Regex que faz a verificação do formato do telefone, seja de 8 ou 9 digitos, com parenteses, traço e espaço opcionais -->				
+			
+				<button onclick="salvar()" type="submit" class="botao botao-red">
+					Salvar Dados Pessoais
+				</button>
+		
+				<script type="text/javascript">   <!-- script que salva os dados com localstorage -->
+					function salvar(){
+						var nomeCompleto = document.getElementById("nomeCompleto");
+						var nascimento = document.getElementById("nascimento");
+						var genero = document.getElementById("genero");
+						var estadoCivil = document.getElementById("estadoCivil");
+						var nacionalidade = document.getElementById("nacionalidade");
+						var cpf = document.getElementById("cpf");
+						var endereco = document.getElementById("endereco");
+						var email = document.getElementById("email");
+						var celular = document.getElementById("celular");
+						localStorage.setItem("nomeCompleto", nomeCompleto.value);
+						localStorage.setItem("nascimento", nascimento.value);
+						localStorage.setItem("genero", genero.value);
+						localStorage.setItem("estadoCivil", estadoCivil.value);
+						localStorage.setItem("nacionalidade", nacionalidade.value);
+						localStorage.setItem("cpf", cpf.value);
+						localStorage.setItem("endereco", endereco.value);
+						localStorage.setItem("email", email.value);
+						localStorage.setItem("celular", celular.value);
+						
+					}
+					
+					
+				</script>
+				
+			</form>
+		</div>
+</section>

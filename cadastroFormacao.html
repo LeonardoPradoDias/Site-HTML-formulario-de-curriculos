@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="with=devide-width, initial-scale=1.0" charset = "utf-8">
+		<title>Projeto 2 - Multimídia e Hipermídia</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<section class="sub-header">
+		 <nav>
+			<a href="index.html"><img src="imagens/logo.png"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="sobre.html">SOBRE</a></li>
+				</ul>
+			</div>
+		 </nav>
+
+	</section>
+
+<!------------------------------ CADASTRAR--------------------------->
+
+<section class="cadastrar" >
+	<h1>Escolaridade</h1>
+	<p>O formulário abaixo registrará informações sobre sua escolaridade!</p>
+		
+		<div class="formulario-dados">
+			<h2>Preencha seus dados sobre formação e escolaridade.Os campos com '*' são obrigatórios</h2>
+			
+			<form class="textbox-formulario" action="cadastroResumo.html">
+				<h3>Escreva sobre seu nível de escolaridade* </h3>
+				<textarea rows="8" type="text" id="formacao" 
+				placeholder="Ex: Curso Técnico em Informática no SENAI São Carlos de 2014 a 2016. Máximo de 200 caracteres"
+				maxlength="200" required></textarea>
+				
+				<button href="cadastroResumo.html" onclick="salvar()" type="submit" class="botao botao-red">
+					Salvar Escolaridade
+				</button>
+				
+				<script type="text/javascript">   <!-- script que salva os dados com localstorage -->
+					function salvar(){
+						var formacao = document.getElementById("formacao");
+
+						localStorage.setItem("formacao", formacao.value);
+
+	
+					}
+					
+					
+				</script>
+				
+			</form>
+		</div>
+</section>

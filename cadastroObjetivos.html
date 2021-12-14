@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="with=devide-width, initial-scale=1.0" charset = "utf-8">
+		<title>Projeto 2 - Multimídia e Hipermídia</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<section class="sub-header">
+		 <nav>
+			<a href="index.html"><img src="imagens/logo.png"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="sobre.html">SOBRE</a></li>
+				</ul>
+			</div>
+		 </nav>
+
+	</section>
+
+<!------------------------------ CADASTRAR--------------------------->
+
+<section class="cadastrar">
+	<h1>Objetivos Profissionais</h1>
+	<p>Preencha o formulário abaixo com os objetivos que deseja para a vaga!</p>
+		
+		<div class="formulario-dados">
+			<h2>Preencha seus objetivos profissionais.Os campos com '*' são obrigatórios</h2>
+			
+			<form class="textbox-formulario" action="cadastroFormacao.html" >
+				<h3>Cargo pretendido*</h3>											<!-- text area para fazer caixa de resposta grande -->
+				<textarea rows="8" type="text" id="objetivos" 
+				placeholder="Escreva qual o cargo, nível e atividade desejada. Ex: Engenheiro de Software Junior, com foco em HTML. Mínimo de 10 caracteres" minlength="10" required ></textarea>
+				
+				<h3>Regiões que deseja trabalhar</h3>
+				<textarea rows="5" type="text" id="regiaoInteresse" 
+				placeholder="Digite quais regiões tem interesse em trabalhar (país, cidade). Máximo de 100 caracteres" maxlength="100" ></textarea>
+				
+				<h3>Pretensão salarial</h3>
+				<input type="text" id="pretensaoSalarial" 
+				placeholder="Escreva sobre sua pretensão salarial. Máximo de 50 caracteres" maxlength="100" >
+				
+				
+				<button href="cadastroFormacao.html"  onclick="salvar()" type="submit" class="botao botao-red">
+					Salvar Objetivos
+				</button>
+				
+				<script type="text/javascript">   <!-- script que salva os dados com localstorage -->
+					function salvar(){
+						var objetivos = document.getElementById("objetivos");
+						var regiaoInteresse = document.getElementById("regiaoInteresse");
+						var pretensaoSalarial = document.getElementById("pretensaoSalarial")
+						localStorage.setItem("objetivos", objetivos.value);
+						localStorage.setItem("regiaoInteresse", regiaoInteresse.value);
+						localStorage.setItem("pretensaoSalarial", pretensaoSalarial.value);
+						
+
+	
+					}
+					
+					
+				</script>
+				
+			</form>
+		</div>
+</section>

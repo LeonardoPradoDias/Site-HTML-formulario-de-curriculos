@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<html lang="pt-br">
+<head>
+	<meta name="viewport" content="with=devide-width, initial-scale=1.0" charset = "utf-8">
+		<title>Projeto 2 - Multimídia e Hipermídia</title>
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<section class="sub-header">
+		 <nav>
+			<a href="index.html"><img src="imagens/logo.png"></a>
+			<div class="nav-links">
+				<ul>
+					<li><a href="sobre.html">SOBRE</a></li>
+				</ul>
+			</div>
+		 </nav>
+
+	</section>
+
+<!------------------------------ CADASTRAR--------------------------->
+
+<section class="cadastrar">
+	<h1>Faça seu resumo profissional</h1>
+	<p>Preencha o formulário abaixo com informações sobre suas experiências profissionais e outra informações que possam ser pertinentes!</p>
+		
+		<div class="formulario-dados">
+			<h2>Escreva aqui um resumo sobre lugares onde já trabalhou, cargos, datas e outras informações pertinentes! Os campos com '*' são obrigatórios</h2>
+			
+			<form class="textbox-formulario" action="fimDoCadastro.html">
+				
+				<textarea rows="15" type="text" id="resumo" 
+				placeholder="Ex: Estágiario Web Developer na google de 03/2019 a 03/2020. Até 1000 caracteres"
+				maxlength="1000" required></textarea>
+				
+				
+				<button onclick="salvar()" type="submit" class="botao botao-red">
+					Salvar Resumo
+				</button>
+				
+				<script type="text/javascript">   <!-- script que salva os dados com localstorage -->
+					function salvar(){
+						var resumo = document.getElementById("resumo");
+
+						
+						localStorage.setItem("resumo", resumo.value);
+
+					}
+					
+					
+				</script>
+				
+			</form>
+		</div>
+</section>
